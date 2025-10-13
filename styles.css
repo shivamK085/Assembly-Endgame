@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: "Hanken Grotesk", Arial, sans-serif;
+    background: #262626;
+    color: #d9d9d9;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    text-align: center;
+}
+
+header > h1{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #f9f4da;
+}
+
+header > p{
+    max-width: 350px;
+    font-size: 0.875rem;
+    color: #8E8E9E;
+}
+
+section.game-status{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #10A95B;
+    border-radius: 4px;
+    color: #f9f4da;
+    margin-block: 30px;
+    width: 350px;
+}
+
+.game-status > h2{
+    font-size: 1.25rem;
+    margin: 5px;
+}
+
+.game-status > p{
+    margin: 5px;
+}
+
+section.language-chips{
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 350px;
+    margin: 0 auto;
+    margin-bottom: 36px;
+}
+
+.chips, .lost{
+    padding: 4.5px;
+    border-radius: 3px;
+}
+
+.lost {
+  position: relative;  /* make span the positioning context */
+  display: inline-block; /* so it can have a proper box */
+  overflow: hidden; /* ensure overlay doesn't spill */
+}
+
+/* Dimmed overlay with skull on "lost" languages */
+.lost::before {
+    content: "\1F480";
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    font-size: 0.85rem;
+    top: 0;
+    left: 0; 
+    background: rgba(0, 0, 0, 0.8);
+}
+
+section.display-word{
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+}
+
+span.letter{
+    font-weight: bold;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    background: #323232;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #F9F4DA;
+}
+
+section.keyboard{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 520px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    gap: 8px;
+}
+
+button.key, .correct-char, .wrong-char{ 
+    background: #FCBA29;
+    border: none;
+    text-transform: uppercase;
+    height: 40px;
+    width: 40px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button.correct-char{
+    background: #10A95B;
+}
+
+button.wrong-char{
+    background: #ea3820;
+}
+
+button.new-game-btn{
+    background: rgb(7, 160, 231);
+    border: 1px solid #F9F4DA;
+    border-radius: 4px;
+    height: 40px;
+    width: 200px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+
+
