@@ -12,12 +12,12 @@ The goal: **guess the random hidden word letter by letter** in under **8 attempt
 * You have **8 total attempts** before “Assembly” takes over!
 * Guess all letters correctly to **save the programming world!**
 
-
+---
 
 ## 🌐 Live Demo
-👉 [Click here to try the Meme Generator](https://melodious-conkies-3174a5.netlify.app/)
+👉 [Play Online](https://melodious-conkies-3174a5.netlify.app/)
 
-
+---
 
 ## ✨ Features
 
@@ -28,8 +28,7 @@ The goal: **guess the random hidden word letter by letter** in under **8 attempt
 * 💬 Fun farewell messages for each wrong guess
 * 🔁 “New Game” button for instant restart
 
-
-
+---
 
 ## 🛠️ Tech Stack
 
@@ -39,8 +38,7 @@ The goal: **guess the random hidden word letter by letter** in under **8 attempt
 * **Custom utility functions** (`getRandomWord`, `getFarewellText`)
 * **Local state management** via React Hooks
 
-
-
+---
 
 ## 🚀 Getting Started
 
@@ -65,25 +63,6 @@ npm start
 
 Then open **[http://localhost:3000](http://localhost:3000)** in your browser to play!
 
-
-
-
-## 📁 Project Structure
-
-```
-assembly-endgame/
-├── .gitattributes
-├── App.jsx
-├── index.html
-├── languages.js
-├── main.jsx
-├── styles.css
-├── utils.js
-└── vite.config.js
-└── words.js
-
-```
-
 ---
 
 ## 🕹️ How to Play
@@ -97,7 +76,7 @@ assembly-endgame/
 
 ## 📸 Screenshots
 
-<img src="">
+<img width="1384" height="1196" alt="image" src="https://github.com/user-attachments/assets/bf9e1e1e-6eb2-4fd2-b118-59e99256f64f" />
 
 ---
 
