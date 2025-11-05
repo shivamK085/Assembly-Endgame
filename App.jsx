@@ -130,6 +130,11 @@ export default function Hangman() {
         }
     }
 
+    function startNewGame(){
+        setCurrentWord(getRandomWord)
+        setGuessedLetters([])
+    }
+
 
 
     return (
@@ -154,7 +159,7 @@ export default function Hangman() {
                 {keyElements}
             </section>
             <section>
-                {isGameOver && <button className="new-game-btn">New Game</button>}
+                {isGameOver && <button className="new-game-btn" onClick={startNewGame}>New Game</button>}
             </section>
         </main >
     )
