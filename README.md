@@ -1,4 +1,4 @@
-# 🧩 Assembly Endgame
+# 🧩 Assembly Endgame — Save the programming world, one guess at a time!
 
 **Assembly Endgame** is a fun and challenging **word guessing game** built with **React**.
 The goal: **guess the random hidden word letter by letter** in under **8 attempts** — or watch as your favorite programming languages get eliminated one by one until only **Assembly** remains.
@@ -12,7 +12,12 @@ The goal: **guess the random hidden word letter by letter** in under **8 attempt
 * You have **8 total attempts** before “Assembly” takes over!
 * Guess all letters correctly to **save the programming world!**
 
----
+
+
+## 🌐 Live Demo
+👉 [Click here to try the Meme Generator](https://melodious-conkies-3174a5.netlify.app/)
+
+
 
 ## ✨ Features
 
@@ -23,7 +28,8 @@ The goal: **guess the random hidden word letter by letter** in under **8 attempt
 * 💬 Fun farewell messages for each wrong guess
 * 🔁 “New Game” button for instant restart
 
----
+
+
 
 ## 🛠️ Tech Stack
 
@@ -33,7 +39,8 @@ The goal: **guess the random hidden word letter by letter** in under **8 attempt
 * **Custom utility functions** (`getRandomWord`, `getFarewellText`)
 * **Local state management** via React Hooks
 
----
+
+
 
 ## 🚀 Getting Started
 
@@ -58,7 +65,8 @@ npm start
 
 Then open **[http://localhost:3000](http://localhost:3000)** in your browser to play!
 
----
+
+
 
 ## 📁 Project Structure
 
