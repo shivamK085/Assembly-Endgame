@@ -76,7 +76,8 @@ Then open **[http://localhost:3000](http://localhost:3000)** in your browser to 
 
 ## 📸 Screenshots
 
-<img width="1361" height="1301" alt="Screenshot 2025-11-05 195327" src="https://github.com/user-attachments/assets/81a739b2-c8ac-49d8-bbcb-cf55333e1d1f" />
+<img width="1000" height="900" alt="Screenshot 2025-11-05 201312" src="https://github.com/user-attachments/assets/5dbac957-c3df-45f8-b2cb-d18da6d3017c" />
+
 
 
 ---
