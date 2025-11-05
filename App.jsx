@@ -59,13 +59,18 @@ export default function Hangman() {
 
 
     const charEls = currentWord.split("").map((letter, index) => {
+        const shouldRevealLetter = isGameLost || guessedLetters.includes(letter)
+        const letterClassName = clsx(
+            isGameLost && !guessedLetters.includes(letter) && "missed-letters"
+        )
 
         return <span
-            className="letter"
+            className={letterClassName}
             key={index}>
-            {guessedLetters.includes(letter) ? letter : ""}
+            {shouldRevealLetter ? letter : ""}
         </span>
     })
+
 
 
 

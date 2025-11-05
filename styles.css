@@ -116,7 +116,7 @@ section.display-word {
     gap: 2px;
 }
 
-span.letter {
+section.display-word > span {
     font-weight: bold;
     font-size: 1.125rem;
     text-transform: uppercase;
@@ -127,6 +127,10 @@ span.letter {
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid #F9F4DA;
+}
+
+section.display-word > span.missed-letters {
+    color: #ea3820;
 }
 
 section.keyboard {
