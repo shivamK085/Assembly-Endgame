@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     margin: 0;
     font-family: "Hanken Grotesk", Arial, sans-serif;
     background: #262626;
@@ -13,50 +13,64 @@ body{
     justify-content: center;
 }
 
-main{
+main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-header{
+header {
     text-align: center;
 }
 
-header > h1{
+header>h1 {
     font-size: 1.2rem;
     font-weight: 500;
     color: #f9f4da;
 }
 
-header > p{
+header>p {
     max-width: 350px;
     font-size: 0.875rem;
     color: #8E8E9E;
 }
 
-section.game-status{
+section.game-status {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #10A95B;
+    justify-content: center;
     border-radius: 4px;
     color: #f9f4da;
     margin-block: 30px;
     width: 350px;
+    min-height: 60px;
 }
 
-.game-status > h2{
+section.game-status.won {
+    background: #10A95B;
+}
+
+section.game-status.lose {
+    background: #ea3820;
+}
+
+section.game-status.playing {
+    border: 1px dashed #323232;
+    background: #5b5be5;
+}
+
+.game-status>h2 {
     font-size: 1.25rem;
     margin: 5px;
 }
 
-.game-status > p{
+.game-status>p {
     margin: 5px;
 }
 
-section.language-chips{
+section.language-chips {
     display: flex;
     gap: 5px;
     flex-wrap: wrap;
@@ -66,15 +80,19 @@ section.language-chips{
     margin-bottom: 36px;
 }
 
-.chips, .lost{
+.chips,
+.lost {
     padding: 4.5px;
     border-radius: 3px;
 }
 
 .lost {
-  position: relative;  /* make span the positioning context */
-  display: inline-block; /* so it can have a proper box */
-  overflow: hidden; /* ensure overlay doesn't spill */
+    position: relative;
+    /* make span the positioning context */
+    display: inline-block;
+    /* so it can have a proper box */
+    overflow: hidden;
+    /* ensure overlay doesn't spill */
 }
 
 /* Dimmed overlay with skull on "lost" languages */
@@ -88,17 +106,17 @@ section.language-chips{
     width: 100%;
     font-size: 0.85rem;
     top: 0;
-    left: 0; 
+    left: 0;
     background: rgba(0, 0, 0, 0.8);
 }
 
-section.display-word{
+section.display-word {
     display: flex;
     justify-content: center;
     gap: 2px;
 }
 
-span.letter{
+span.letter {
     font-weight: bold;
     font-size: 1.125rem;
     text-transform: uppercase;
@@ -111,7 +129,7 @@ span.letter{
     border-bottom: 1px solid #F9F4DA;
 }
 
-section.keyboard{
+section.keyboard {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -121,7 +139,14 @@ section.keyboard{
     gap: 8px;
 }
 
-button.key, .correct-char, .wrong-char{ 
+section.keyboard > button:disabled{
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+button.key,
+.correct-char,
+.wrong-char {
     background: #FCBA29;
     border: none;
     text-transform: uppercase;
@@ -133,15 +158,15 @@ button.key, .correct-char, .wrong-char{
     cursor: pointer;
 }
 
-button.correct-char{
+button.correct-char {
     background: #10A95B;
 }
 
-button.wrong-char{
+button.wrong-char {
     background: #ea3820;
 }
 
-button.new-game-btn{
+button.new-game-btn {
     background: rgb(7, 160, 231);
     border: 1px solid #F9F4DA;
     border-radius: 4px;
@@ -151,7 +176,3 @@ button.new-game-btn{
     font-weight: 500;
     cursor: pointer;
 }
-
-
-
-

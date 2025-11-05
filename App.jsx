@@ -1,6 +1,7 @@
 import React from "react"
 import { languages } from "./languages"
 import clsx from "clsx"
+import { getFarewellText } from "./utils"
 
 export default function Hangman() {
 
@@ -11,7 +12,17 @@ export default function Hangman() {
     // Derived values
     const wrongGuessCount = guessedLetters.filter(letter => !currentWord.includes(letter)).length
 
-    console.log(wrongGuessCount)
+    const isGameWon = currentWord.split("").every(letter => guessedLetters.includes(letter))
+    const isGameLost = wrongGuessCount >= languages.length - 1
+
+    const isGameOver = isGameWon || isGameLost
+    const lastGuess = guessedLetters[guessedLetters.length - 1]
+
+    const isLastGuessIncorrect = lastGuess && !currentWord.includes(lastGuess)
+
+
+
+    // console.log(wrongGuessCount)
 
 
     // Static values
@@ -22,55 +33,57 @@ export default function Hangman() {
         const isCorrect = isGuessed && currentWord.includes(letter)
         const isWrong = isGuessed && !currentWord.includes(letter)
         const className = clsx(
-                                    {
-                                        "key": true, 
-                                        "correct-char": isCorrect,
-                                        "wrong-char": isWrong
-                                    }
-                                )
+            {
+                "key": true,
+                "correct-char": isCorrect,
+                "wrong-char": isWrong
+            }
+        )
 
 
         return (
-                <button 
-                    key={index} 
-                    className={className} 
-                    onClick={handleClick}>
-                        {letter}
-                </button>
-            )    
+            <button
+                key={index}
+                aria-disabled={guessedLetters.includes(letter)}
+                aria-label={`letter ${letter}`}
+                className={className}
+                disabled={isGameOver}
+                onClick={handleClick}>
+                {letter}
+            </button>
+        )
     })
 
 
 
     const charEls = currentWord.split("").map((letter, index) => {
 
-        return <span 
-                    className="letter" 
-                    key={index}>
-                        {guessedLetters.includes(letter) ? letter : ""}
-                </span>
+        return <span
+            className="letter"
+            key={index}>
+            {guessedLetters.includes(letter) ? letter : ""}
+        </span>
     })
 
 
 
     const langChips = languages.map((item, index) => {
-
         const styles = {
             backgroundColor: item.backgroundColor,
-            color: item.color,
+            color: item.color
         }
 
         return (
-            <span 
-                key={item.name} 
-                style={styles} 
+            <span
+                key={item.name}
+                style={styles}
                 className={index < wrongGuessCount ? "lost" : "chips"}>
-                    {item.name}
+                {item.name}
             </span>
         )
     })
 
-    function handleClick(event){
+    function handleClick(event) {
         const letter = event.target.textContent
 
         setGuessedLetters(prevArr =>
@@ -80,6 +93,42 @@ export default function Hangman() {
         )
     }
 
+    const gameStatusClass = clsx("game-status", {
+        "won": isGameWon,
+        "lose": isGameLost,
+        "playing": !isGameOver && isLastGuessIncorrect
+    })
+
+
+    function renderGameStatus() {
+        if (!isGameOver && isLastGuessIncorrect) {
+            return (
+                <p>{getFarewellText(languages[wrongGuessCount - 1].name)}</p>
+            )
+        }
+
+        if (isGameWon) {
+            return (
+                <>
+                    <h2>You Win!</h2>
+                    <p>Well done!🎊</p>
+                </>
+            )
+        }
+        else if (isGameLost) {
+            return (
+                <>
+                    <h2>Game Over!</h2>
+                    <p>You Lost! Better start learning Assembly!😭</p>
+                </>
+            )
+        }
+        else {
+            return null
+        }
+    }
+
+
 
     return (
         <main>
@@ -88,10 +137,11 @@ export default function Hangman() {
                 <p>Guess the word in under 8 attempts to
                     save the programming world from Assembly!</p>
             </header>
-            <section className="game-status">
-                <h2>You Win!</h2>
-                <p>Well done!🎊</p>
-            </section>
+            <section aria-live="polie"
+                role="status"
+                className={gameStatusClass}>
+                {renderGameStatus()}
+            </section >
             <section className="language-chips">
                 {langChips}
             </section>
@@ -102,8 +152,8 @@ export default function Hangman() {
                 {keyElements}
             </section>
             <section>
-                <button className="new-game-btn">New Game</button>
+                {isGameOver && <button className="new-game-btn">New Game</button>}
             </section>
-        </main>
+        </main >
     )
 }
