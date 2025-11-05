@@ -21,7 +21,6 @@ export default function Hangman() {
 
     const isLastGuessIncorrect = lastGuess && !currentWord.includes(lastGuess)
 
-    console.log(currentWord)
 
 
 
