@@ -27,7 +27,7 @@ The goal: **guess the random hidden word letter by letter** in under **8 attempt
 
 ## 🛠️ Tech Stack
 
-* **React** (Vite or CRA)
+* **React** (Vite)
 * **clsx** for dynamic class names
 * **react-confetti** for victory animation
 * **Custom utility functions** (`getRandomWord`, `getFarewellText`)
@@ -63,12 +63,17 @@ Then open **[http://localhost:3000](http://localhost:3000)** in your browser to 
 ## 📁 Project Structure
 
 ```
-src/
+assembly-endgame/
+├── .gitattributes
 ├── App.jsx
+├── index.html
 ├── languages.js
+├── main.jsx
+├── styles.css
 ├── utils.js
-├── index.css
-└── ...
+└── vite.config.js
+└── words.js
+
 ```
 
 ---
@@ -84,14 +89,7 @@ src/
 
 ## 📸 Screenshots
 
-*(Add your gameplay screenshots here)*
-
----
-
-## 👨‍💻 Author
-
-Developed by **[Your Name](https://github.com/your-username)**
-Part of the *React Fun Projects* collection.
+<img src="">
 
 ---
 
